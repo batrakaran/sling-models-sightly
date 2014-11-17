@@ -1,0 +1,23 @@
+<div>
+	<!--/* This is injected via the custom BVP : CustomBindingProvider  */-->
+	<h1>${customPage.title}</h1>
+</div>
+
+<div data-sly-resource="${ 'quote' @ resourceType='myproject/components/latlong'}">
+When using things like data-sly-resource, this content will be replaced by the output of the component.
+</div>
+
+<div data-sly-use.content="com.mycompany.myproject.components.ContentComponent">
+Value presented via sling-models ${content.title}
+</div>
+
+<div>
+Other Sightly examples, as presented in the slides:
+</div>
+
+<div data-sly-test.authorMode="${wcmmode.edit || wcmmode.preview}">Show this in author-mode</div>
+<div data-sly-test="${!authorMode}">Not in Author-mode</div>
+
+<div data-sly-test.concat="${ 'This is page {0}, with title {1}' @ format=[currentPage.name,currentPage.title]}">
+${concat}
+</div>
